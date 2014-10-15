@@ -9,6 +9,7 @@ public class Boundary{
 
 public class heroController : MonoBehaviour {
 
+	public GameObject playerExplosion;
 	public float speed;
 	public Boundary boundary;
 	public float tilt;
@@ -18,12 +19,16 @@ public class heroController : MonoBehaviour {
 	public float fireRate;
 	public float nextFire;
 
+	public int fireStrength = 1;
+	private float ScaleValue= (float)1.0;
+
 	void Update(){
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-			//audio.Play ();
+			shot.transform.localScale = new Vector3(ScaleValue,ScaleValue,ScaleValue);
+			audio.Play ();
 		}
 	}
 
@@ -44,9 +49,27 @@ public class heroController : MonoBehaviour {
 
 		//make the slip effect
 		this.rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, this.rigidbody.velocity.x * -tilt);//slip effect
-		
+
 	}
-
-	
-
+	public void AddRate()
+	{
+		if (fireRate > (float)0.1)
+		{
+			fireRate -= (float)0.05;
+	    }
+	}
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "enemybullet") {
+			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			Destroy(other.gameObject);
+			Destroy(gameObject);		
+		}
+	}
+	public void AddStrength()
+	{
+		fireStrength += 1;
+		if(ScaleValue < (float)3.0)
+		ScaleValue += (float)0.1;
+	}
 }
