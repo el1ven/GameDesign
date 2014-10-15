@@ -8,12 +8,11 @@ public class Boundary{
 }
 
 public class heroController : MonoBehaviour {
-
-	public GameObject playerExplosion;
+	
 	public float speed;
 	public Boundary boundary;
 	public float tilt;
-
+	public int life;
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
@@ -22,38 +21,19 @@ public class heroController : MonoBehaviour {
 	public int fireStrength = 1;
 	private float ScaleValue= (float)1.0;
 
-	void heroBulletRotation(){
-		//将世界坐标换算成屏幕坐标
-		Vector3 vpos3 = Camera.main.WorldToScreenPoint(shotSpawn.position);
-		Vector2 vpos2 = new Vector2 (vpos3.x,vpos3.y);
-
-		//取得鼠标点击的屏幕坐标
-		Vector2 input = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
-
-		//取得主角到目标点的向量
-		Vector3 v = new Vector3 (vpos2.x-input.x, 0.0f, vpos2.y-input.y);
-		Vector3 normal = v.normalized;
-
-		//我们忽略Y轴的向量，把2D向量应用在3D向量中。
-		Vector3 targetDirection = new Vector3(-normal.x,0.0f,-normal.z) ;
-
-		shotSpawn.forward = Vector3.Lerp(shotSpawn.forward, targetDirection, 0.5f);
-
-
-	}
-
-	void Update(){
+	void Update()
+	{
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
-			heroBulletRotation();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 			shot.transform.localScale = new Vector3(ScaleValue,ScaleValue,ScaleValue);
 			audio.Play ();
 		}
 	}
 
-	void FixedUpdate(){
+	void FixedUpdate()
+	{
 		//get the input from keyboard
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
@@ -78,14 +58,6 @@ public class heroController : MonoBehaviour {
 		{
 			fireRate -= (float)0.05;
 	    }
-	}
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "enemybullet") {
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			Destroy(other.gameObject);
-			Destroy(gameObject);		
-		}
 	}
 	public void AddStrength()
 	{

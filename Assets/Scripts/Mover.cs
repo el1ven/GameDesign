@@ -7,6 +7,8 @@ public class Mover : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity = transform.forward * speed;
+
 	}
+	
 
 }
