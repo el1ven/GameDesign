@@ -8,12 +8,11 @@ public class Boundary{
 }
 
 public class heroController : MonoBehaviour {
-
-	public GameObject playerExplosion;
+	
 	public float speed;
 	public Boundary boundary;
 	public float tilt;
-
+	public int life;
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
@@ -22,7 +21,8 @@ public class heroController : MonoBehaviour {
 	public int fireStrength = 1;
 	private float ScaleValue= (float)1.0;
 
-	void Update(){
+	void Update()
+	{
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
@@ -32,7 +32,8 @@ public class heroController : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate(){
+	void FixedUpdate()
+	{
 		//get the input from keyboard
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
@@ -57,14 +58,6 @@ public class heroController : MonoBehaviour {
 		{
 			fireRate -= (float)0.05;
 	    }
-	}
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "enemybullet") {
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			Destroy(other.gameObject);
-			Destroy(gameObject);		
-		}
 	}
 	public void AddStrength()
 	{

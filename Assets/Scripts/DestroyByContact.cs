@@ -5,7 +5,9 @@ public class DestroyByContact : MonoBehaviour
 {
 	public GameObject explosion;
 	public GameObject playerExplosion;
+	public GameObject splitCircle;
 	public int life;
+	public int fireStregth;
 	private heroController gameController;
 	void Start()
 	{
@@ -23,20 +25,29 @@ public class DestroyByContact : MonoBehaviour
 			if(life <= 0)
 			{
 			 Instantiate(explosion, transform.position, transform.rotation);
-			 Destroy(gameObject);
 		     if(this.name=="CubeMonster1(Clone)")
 		     gameController.AddRate();
 			 if(this.name=="TriangleMonster1(Clone)")
 			 gameController.AddStrength();
+			 if(this.name=="DoubleCircleMonster")
+			 {
+				Instantiate(splitCircle,transform.position,transform.rotation);
+				Instantiate(splitCircle,transform.position,transform.rotation);
+			 }
+			 Destroy(gameObject);
 			}
 			Destroy(other.gameObject);
 		}
 		if (other.tag == "Player")
 		{
+			gameController.life -= fireStregth; 
+			if(gameController.life <=0)//如果主角生命低下
+			{
+			 Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			 Destroy(other.gameObject);
+			}
 			Instantiate(explosion, transform.position, transform.rotation);
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			Destroy(other.gameObject);
-			Destroy(gameObject);
+			Destroy(gameObject);	
 			//gameController.GameOver ();
 		}
 	}
