@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyBulletController : MonoBehaviour {
 
 	public GameObject playerExplosion;
+	public GameObject bulletExplosion;
 	public int strength;
 	private GameObject Hero;
 	private heroController gameController;
@@ -27,7 +28,14 @@ public class EnemyBulletController : MonoBehaviour {
 				 Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
 				 Destroy(other.gameObject);
 			    }
+			    Instantiate(bulletExplosion,this.rigidbody.position,this.rigidbody.rotation);
 			    Destroy(gameObject);
 			}
+		    if (other.tag == "bullet") 
+		   {
+			Instantiate(bulletExplosion,this.rigidbody.position,this.rigidbody.rotation);
+			Destroy(other.gameObject);
+			Destroy(gameObject);
+		   }
 	}
 }

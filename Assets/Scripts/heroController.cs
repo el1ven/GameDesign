@@ -17,7 +17,7 @@ public class heroController : MonoBehaviour {
 	public Transform shotSpawn;
 	public float fireRate;
 	public float nextFire;
-
+	public GameObject blackHole;
 	public int fireStrength = 1;
 	private float ScaleValue= (float)1.0;
 	
@@ -71,7 +71,11 @@ public class heroController : MonoBehaviour {
 
 		//make the slip effect
 		this.rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, this.rigidbody.velocity.x * -tilt);//slip effect
-
+       
+		if (Input.GetKeyDown("b")) 
+		{
+			Instantiate(blackHole,this.rigidbody.position,this.rigidbody.rotation);
+		}
 	}
 	public void AddRate()
 	{
