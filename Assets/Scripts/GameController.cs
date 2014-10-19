@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour {
 
 	public GameObject CubeMonster;
 	public GameObject TriangleMonster;
+	public GameObject SphereMonster;
 	public Vector3 spawnValues;
 
 	public int hazardCount;
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour {
 				Quaternion spawnRotation = new Quaternion(0,180,0,0);
 				Instantiate (CubeMonster, spawnPosition, spawnRotation);
 				Instantiate (TriangleMonster,spawnPosition,spawnRotation);
+				Instantiate (SphereMonster,spawnPosition,spawnRotation);
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
