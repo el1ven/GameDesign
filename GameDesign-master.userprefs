@@ -1,12 +1,39 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SphereRemain.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Glow11\Glow11DemoScene\Scripts\ColorChanger.cs">
     <Files>
-      <File FileName="Assets\Scripts\SphereRemain.js" Line="9" Column="21" />
+      <File FileName="Assets\Glow11\Glow11DemoScene\Scripts\ColorChanger.cs" Line="24" Column="41" />
+      <File FileName="Assets\selfrotate.cs" Line="12" Column="18" />
       <File FileName="Assets\Scripts\GameController.cs" Line="24" Column="4" />
-      <File FileName="Assets\Scripts\DestroyByContact.cs" Line="33" Column="41" />
-      <File FileName="Assets\Scripts\heroController.cs" Line="92" Column="3" />
+      <File FileName="Assets\Scripts\DestroyByContact.cs" Line="44" Column="30" />
+      <File FileName="Assets\Glow11\Glow11DemoScene\Scripts\Set60Fps.cs" Line="14" Column="98" />
+      <File FileName="Assets\Glow11\Glow11DemoScene\Scripts\ColorChangerVertex.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SphereRemain.js" Line="9" Column="21" />
+      <File FileName="Assets\Scripts\heroController.cs" Line="50" Column="7" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Glow11" expanded="True">
+                <Node name="Glow11DemoScene" expanded="True">
+                  <Node name="Scripts" expanded="True">
+                    <Node name="ColorChanger.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="Assembly-UnityScript" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
