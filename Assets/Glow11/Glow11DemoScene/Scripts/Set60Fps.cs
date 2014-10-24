@@ -12,7 +12,10 @@ public class Set60Fps : MonoBehaviour
     }
 	void LateUpdate()
 	{
-		transform.position = hero.transform.position + offset;
+		if (hero)
+			transform.position = hero.transform.position + offset;
+		else
+		    transform.position = new Vector3 (0.0f, 10.0f, 0.0f);
 	}
     
 }
