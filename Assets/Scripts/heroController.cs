@@ -79,15 +79,15 @@ public class heroController : MonoBehaviour {
 	}
 	public void AddRate()
 	{
-		if (fireRate > (float)0.1)
+		/*if (fireRate > (float)0.1)
 		{
 			fireRate -= (float)0.05;
-	    }
+	    }*/
 	}
 	public void AddStrength()
 	{
-		fireStrength += 1;
+		/*fireStrength += 1;
 		if(ScaleValue < (float)3.0)
-		ScaleValue += (float)0.1;
+		ScaleValue += (float)0.1;*/
 	}
 }

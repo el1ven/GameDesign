@@ -4,14 +4,15 @@ using System.Collections;
 public class Set60Fps : MonoBehaviour
 {
 	public GameObject hero;
+	private Vector3 offset;
     // Use this for initialization
     void Start ()
     {
-        Application.targetFrameRate = 60;
+		offset = transform.position;
     }
-	void Update()
+	void LateUpdate()
 	{
-		this.transform.position=new Vector3(hero.transform.position.x,10.0f,hero.transform.position.z);
+		transform.position = hero.transform.position + offset;
 	}
     
 }
