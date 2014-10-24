@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{4052D1CA-CAA5-0D84-F331-4D3E0D328DBD}") = "GameDesign", "Assembly-CSharp.csproj", "{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}"
 EndProject
+Project("{4052D1CA-CAA5-0D84-F331-4D3E0D328DBD}") = "GameDesign", "Assembly-CSharp-Editor.csproj", "{6A71303E-6378-6F8B-CAE0-6DA713D93441}"
+EndProject
+Project("{4052D1CA-CAA5-0D84-F331-4D3E0D328DBD}") = "GameDesign", "Assembly-UnityScript.unityproj", "{604F4E50-C66E-4B48-484A-324B62CF8891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +17,19 @@ Global
 		{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A71303E-6378-6F8B-CAE0-6DA713D93441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A71303E-6378-6F8B-CAE0-6DA713D93441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A71303E-6378-6F8B-CAE0-6DA713D93441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A71303E-6378-6F8B-CAE0-6DA713D93441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{604F4E50-C66E-4B48-484A-324B62CF8891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604F4E50-C66E-4B48-484A-324B62CF8891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604F4E50-C66E-4B48-484A-324B62CF8891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604F4E50-C66E-4B48-484A-324B62CF8891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																					GlobalSection(MonoDevelopProperties) = preSolution
+																																						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

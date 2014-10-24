@@ -9,9 +9,9 @@ public class Set60Fps : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-	void Update ()
+	void Update()
 	{
-		this.transform.position = new Vector3 (hero.transform.position.x, 10, hero.transform.position.z);
+		this.transform.position=new Vector3(hero.transform.position.x,10.0f,hero.transform.position.z);
 	}
     
 }
