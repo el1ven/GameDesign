@@ -19,10 +19,20 @@ public class heroController : MonoBehaviour {
 	public float nextFire;
 	public GameObject blackHole;
 	public int fireStrength = 1;
-	private float ScaleValue= (float)1.0;
+	public int blackNum;
 
-	void Start(){
+	private GameController gameController;
+
+	private float ScaleValue= (float)1.0;
+	void Start()
+	{
+
+		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
+
 		this.transform.Rotate(new Vector3(0,1,0), 90.0f);
+
+		gameController = gameControllerObject.GetComponent <GameController>();
+
 	}
 	
 	void heroBulletRotation(){
@@ -85,8 +95,9 @@ public class heroController : MonoBehaviour {
 
 		heroRotation();
        
-		if (Input.GetKeyDown("b")) 
+		if (Input.GetKeyDown("b") &&gameController.energy >= blackNum) 
 		{
+			gameController.energy -= blackNum;
 			Instantiate(blackHole,this.rigidbody.position,this.rigidbody.rotation);
 		}
 	}

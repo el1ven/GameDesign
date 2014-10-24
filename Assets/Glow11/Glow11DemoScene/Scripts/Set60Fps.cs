@@ -8,7 +8,7 @@ public class Set60Fps : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		offset = transform.position;
+		offset = transform.position + new Vector3 (0.0f, 10.0f, 0.0f);
     }
 	void LateUpdate()
 	{
