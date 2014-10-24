@@ -20,6 +20,10 @@ public class heroController : MonoBehaviour {
 	public GameObject blackHole;
 	public int fireStrength = 1;
 	private float ScaleValue= (float)1.0;
+
+	void Start(){
+		this.transform.Rotate(new Vector3(0,1,0), 90.0f);
+	}
 	
 	void heroBulletRotation(){
 		//将世界坐标换算成屏幕坐标
@@ -34,11 +38,16 @@ public class heroController : MonoBehaviour {
 		Vector3 normal = v.normalized;
 
 		//我们忽略Y轴的向量，把2D向量应用在3D向量中。
-		Vector3 targetDirection = new Vector3(-normal.x,0.0f,-normal.z) ;
-
+		Vector3 targetDirection = new Vector3(-normal.x,0.0f,-normal.z);
 		shotSpawn.forward = Vector3.Lerp(shotSpawn.forward, targetDirection, 0.5f);
+	}
 
-
+	void heroRotation(){
+		//hero rotation according to the mouse
+		Vector3 e = Input.mousePosition;
+		e.z = Camera.main.WorldToScreenPoint(transform.position).z;
+		Vector3 world = Camera.main.ScreenToWorldPoint(e);
+		transform.LookAt(world); //物体朝向鼠标
 	}
 
 	void Update()
@@ -47,6 +56,7 @@ public class heroController : MonoBehaviour {
 		{
 			nextFire = Time.time + fireRate;
 			heroBulletRotation();
+			heroRotation();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 			shot.transform.localScale = new Vector3(ScaleValue,ScaleValue,ScaleValue);
 			audio.Play ();
@@ -55,6 +65,7 @@ public class heroController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+
 		//get the input from keyboard
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
@@ -71,6 +82,8 @@ public class heroController : MonoBehaviour {
 
 		//make the slip effect
 		this.rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, this.rigidbody.velocity.x * -tilt);//slip effect
+
+		heroRotation();
        
 		if (Input.GetKeyDown("b")) 
 		{
