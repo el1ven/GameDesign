@@ -97,7 +97,7 @@ public class heroController : MonoBehaviour {
        
 		if (Input.GetKeyDown("b") &&gameController.energy >= blackNum) 
 		{
-			gameController.energy -= blackNum;
+			gameController.AddEnergy(-blackNum);
 			Instantiate(blackHole,this.rigidbody.position,this.rigidbody.rotation);
 		}
 	}

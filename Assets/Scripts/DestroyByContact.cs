@@ -78,8 +78,9 @@ public class DestroyByContact : MonoBehaviour
 			gamePanel.AddLife();
 			if(gameController.life <=0)//如果主角生命低下
 			{
-			 Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			 Destroy(other.gameObject);
+			    Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			    Destroy(other.gameObject);
+				gamePanel.GameOver();
 			}
 			Instantiate(explosion, transform.position, transform.rotation);
 			Destroy(gameObject);	
@@ -90,8 +91,10 @@ public class DestroyByContact : MonoBehaviour
 			gameController.life-=1;
 			gamePanel.AddLife();
 			Instantiate(explosion, transform.position, transform.rotation);
-			if(gameController.life <=0)//如果主角生命低下
+			if(gameController.life <=0){//如果主角生命低下
 			     Destroy(other.gameObject);
+				 gamePanel.GameOver();
+			}
 			Destroy(gameObject);
 
 		}

@@ -22,15 +22,43 @@ public class GameController : MonoBehaviour {
 	public GUIText energyText;
 	public int energy;
 
+	public GUIText gameOverText;
+	private bool gameOver;
+
+	public GUIText restartText;
+	private bool restart;
+
 	void Start ()
 	{
-		StartCoroutine (SpawnWaves ());
+
 		score = 0;
 		updateScore ();
 		energy = 0;
 		updateEnergy ();
 		hero.life = 10;
 		updateLife ();
+
+		gameOverText.text = "";
+		gameOver = false;
+
+		restartText.text = "";
+		restart = false;
+
+		StartCoroutine (SpawnWaves ());
+	}
+
+	void Update ()
+	{
+		if (hero.life <= 0) {
+			gameOver = true;
+		}
+		if (restart)
+		{
+			if (Input.GetKeyDown (KeyCode.R))
+			{
+				Application.LoadLevel (Application.loadedLevel);
+			}
+		}
 	}
 
 	void updateEnergy(){
@@ -59,11 +87,22 @@ public class GameController : MonoBehaviour {
 		updateScore ();
 	}
 
+	public void GameOver(){
+		gameOver = true;
+		gameOverText.text = "Game Over!";
+	}
+
 	IEnumerator SpawnWaves ()
 	{
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
+			if(gameOver){
+				restartText.text = "Press 'R' To Restart";
+				restart = true;
+				break;
+			}
+
 			for (int i = 0; i < hazardCount; i++)
 			{   
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
@@ -85,7 +124,10 @@ public class GameController : MonoBehaviour {
 				Instantiate (TriangleMonster,spawnPosition,spawnRotation);
 				yield return new WaitForSeconds (spawnWait);
 			}
+
 			yield return new WaitForSeconds (waveWait);
+
+
 		}
 	}
 
