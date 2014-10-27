@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{E9540EC6-91C8-DE99-693E-3FF789D971A9}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-UnityScript-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Unity 3D/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Unity 3D/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Editor\ParticleWindow.js" />
+     <None Include="Assets\Glow11\Shaders\Unity\Unlit-AlphaTest.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-Bumped.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11BlurGL.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-Parallax.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-ParallaxSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseDetail.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-Bumped.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Unlit-Normal.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-VertexLit.shader" />
+     <None Include="Assets\DynamicElements_Effects\ScaleParticles.txt" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Bumped.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec-1DirectionalLight.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpSpec.shader" />
+     <None Include="Assets\Glow11\readme.txt" />
+     <None Include="Assets\Glow11\_internal\Resources\Shaders\Glow11GlowObjects.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-VertexLit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-Parallax.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-BumpSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-BumpSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-Diffuse.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Unlit-Color.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-ParallaxSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-ParallaxSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-Glossy.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Diffuse.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\BlurEffectConeTap.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMaxFallback.shader" />
+     <None Include="Assets\Glow11\_internal\AdvancedBlur.cginc" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-VertexLit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-Glossy.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-ParallaxSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-BumpSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpNolight.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-VertexLit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-VertexLit.shader" />
+     <None Include="Assets\DynamicElements_Effects\readme.txt" />
+     <None Include="Assets\Glow11\_internal\Glow11GlowObjectsCG.cginc" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Bumped.shader" />
+     <None Include="Assets\Glow11\Shaders\Unlit-VertexColor.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-VertexLit.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMax.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Particle VertexLit Blended.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpVertexLit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-Diffuse.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-Glossy.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-Parallax.shader" />
+     <None Include="Assets\Glow11\Shaders\Illumin-Diffuse-VertexIllumin.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseFast.shader" />
+     <None Include="Assets\Glow11\Shaders\Mobile\Illumin-Spec-VertexIllumin.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Glossy.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Reflect-Diffuse.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-Bumped.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11AdvancedBlur.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Particle Alpha Blend.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Diffuse.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Lightmap-Unlit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Particle-Alpha-VertexLit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-BumpSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-SoftEdgeUnlit.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Normal-Parallax.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Unlit-Alpha.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Downsample.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Compose.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-Diffuse.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Illumin-Glossy.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Alpha-Bumped.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-VertexLit-OnlyDirectionalLights.shader" />
+     <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Blur.shader" />
+     <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Particle-Alpha.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="Glow11_Editor">
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Assets/Glow11/_internal/Editor/Glow11_Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Glow11">
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Assets/Glow11/_internal/Plugins/Glow11.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/Unity 3D/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

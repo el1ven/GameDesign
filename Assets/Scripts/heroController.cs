@@ -15,15 +15,23 @@ public class heroController : MonoBehaviour {
 	public int life;
 	public GameObject shot;
 	public Transform shotSpawn;
+	public Transform trailSpawn;
 	public float fireRate;
 	public float nextFire;
+
 	public GameObject blackHole;
+	public GameObject shield;
+	public GameObject blackHoleEffect;
+	public GameObject trailEffect;
+	
 	public int fireStrength = 1;
 	public int blackNum;
-
+	public int shiledNum;
+	public int lightNum;
 	private GameController gameController;
 
 	private float ScaleValue= (float)1.0;
+	private bool haveShiled = false;
 	void Start()
 	{
 
@@ -79,7 +87,6 @@ public class heroController : MonoBehaviour {
 		//get the input from keyboard
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
-
 		//make the movement speed
 		this.rigidbody.velocity =  new Vector3 (moveHorizontal,0.0f,moveVertical) * speed;
 
@@ -93,12 +100,29 @@ public class heroController : MonoBehaviour {
 		//make the slip effect
 		this.rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, this.rigidbody.velocity.x * -tilt);//slip effect
 
+		Instantiate (trailEffect, trailSpawn.position, trailSpawn.rotation);
+
 		heroRotation();
        
 		if (Input.GetKeyDown("b") &&gameController.energy >= blackNum) 
 		{
-			gameController.energy -= blackNum;
+			gameController.AddEnergy(-blackNum);
 			Instantiate(blackHole,this.rigidbody.position,this.rigidbody.rotation);
+			Instantiate(blackHoleEffect,this.rigidbody.position,this.rigidbody.rotation);
+		}
+		if(Input.GetKeyDown("v") && gameController.energy >= shiledNum && haveShiled == false)
+		{
+			gameController.AddEnergy(-shiledNum);
+
+			Instantiate(shield,this.rigidbody.position,this.rigidbody.rotation).name = "shield";
+			GameObject.Find("shield").transform.parent = this.transform;
+			GameObject.Find("shield").transform.localScale = new Vector3(3.0f,3.0f,3.0f);
+			haveShiled = true;
+			gameController.AddShield(2);
+		}
+		if (Input.GetKeyDown ("c") && gameController.energy >= lightNum) 
+		{
+			gameController.AddEnergy(-lightNum);
 		}
 	}
 	public void AddRate()
@@ -113,5 +137,10 @@ public class heroController : MonoBehaviour {
 		/*fireStrength += 1;
 		if(ScaleValue < (float)3.0)
 		ScaleValue += (float)0.1;*/
+	}
+
+	public void SetShield()
+	{
+		haveShiled = false;
 	}
 }

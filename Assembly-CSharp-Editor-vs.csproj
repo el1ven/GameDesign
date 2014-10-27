@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,129 +39,42 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Unity 3D/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Unity 3D/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
-     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\ComponentSelector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\EventDelegateEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIContextMenu.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIHandles.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIHelp.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIJson.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIMenu.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISettings.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISnap.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\SpriteSelector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenAlphaEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenColorEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenFOVEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenHeightEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenOrthoSizeEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenPositionEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenRotationEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenScaleEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenTransformEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenVolumeEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\TweenWidthEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UI2DSpriteEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIAnchorEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonColorEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIButtonMessageEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICameraEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICameraTool.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIDragObjectEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallViewer.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIEventTriggerEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontMaker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIForwardEventsEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIGridEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIInputEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UILabelInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UILocalizeEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelTool.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPlayAnimationEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPlayTweenEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIProgressBarEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIRectEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIRootEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollBarEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollViewEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISliderEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIStretchEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITableEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITextureInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITexturePacker.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIToggleInspector.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UITweenerEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
-     <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <Compile Include="Assets\Xffect\Editor\EffectLayerCustom.cs" />
+     <Compile Include="Assets\Xffect\Editor\XffectCustom.cs" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-AlphaTest.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Bumped.shader" />
-     <None Include="Assets\NGUI\ReadMe - 3.5.1.txt" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11BlurGL.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Parallax.shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-ParallaxSpec.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseDetail.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Bumped.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (SoftClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Normal.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Bumped.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec-1DirectionalLight.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpSpec.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
      <None Include="Assets\Glow11\readme.txt" />
      <None Include="Assets\Glow11\_internal\Resources\Shaders\Glow11GlowObjects.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Parallax.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-BumpSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-BumpSpec.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Diffuse.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Color.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-ParallaxSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-ParallaxSpec.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Diffuse.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (AlphaClip).shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\BlurEffectConeTap.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMaxFallback.shader" />
      <None Include="Assets\Glow11\_internal\AdvancedBlur.cginc" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-ParallaxSpec.shader" />
@@ -170,24 +83,19 @@
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-VertexLit.shader" />
      <None Include="Assets\Glow11\_internal\Glow11GlowObjectsCG.cginc" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Bumped.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unlit-VertexColor.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-VertexLit.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMax.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Particle VertexLit Blended.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpVertexLit.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\readme.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Diffuse.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Parallax.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\Glow11\Shaders\Illumin-Diffuse-VertexIllumin.shader" />
+     <None Include="Assets\Xffect\Shaders\xf_heat_distortion.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseFast.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Glow11\Shaders\Mobile\Illumin-Spec-VertexIllumin.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Diffuse.shader" />
@@ -199,36 +107,28 @@
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Particle-Alpha-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-BumpSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-SoftEdgeUnlit.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Parallax.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Alpha.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Downsample.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
-     <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Compose.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
-     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Diffuse.shader" />
-     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Bumped.shader" />
-     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-VertexLit-OnlyDirectionalLights.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Blur.shader" />
-     <None Include="Assets\NGUI\Resources\Localization.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Particle-Alpha.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>/Users/el1ven/Desktop/GameDesign/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="Glow11_Editor">
- <HintPath>/Users/el1ven/Desktop/GameDesign/Assets/Glow11/_internal/Editor/Glow11_Editor.dll</HintPath>
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Assets/Glow11/_internal/Editor/Glow11_Editor.dll</HintPath>
  </Reference>
  <Reference Include="Glow11">
- <HintPath>/Users/el1ven/Desktop/GameDesign/Assets/Glow11/_internal/Plugins/Glow11.dll</HintPath>
+ <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Assets/Glow11/_internal/Plugins/Glow11.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>D:/Unity 3D/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

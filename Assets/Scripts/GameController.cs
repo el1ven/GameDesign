@@ -22,6 +22,9 @@ public class GameController : MonoBehaviour {
 	public GUIText energyText;
 	public int energy;
 
+	public GUIText shieldText;
+	private int shield;
+
 	void Start ()
 	{
 		StartCoroutine (SpawnWaves ());
@@ -32,29 +35,31 @@ public class GameController : MonoBehaviour {
 		hero.life = 10;
 		updateLife ();
 	}
-
+    void updateShiled(){
+		shieldText.text = "Shield: " + shield;
+		}
 	void updateEnergy(){
 		energyText.text = "Energy: " + energy;
 	}
-
-	public void AddEnergy(int newEnergyValue){
-		energy += newEnergyValue;
-		updateEnergy ();
-	}
-
 	void updateLife(){
 		lifeText.text = "Life: " + hero.life;
 	}
-
-	public void AddLife(){
-		updateLife ();
-	}
-
 	void updateScore(){
 		scoreText.text = "Scores:" + score;
 	}
-	
-	public void AddScore(int newScoreValue){
+   public void AddShield(int shieldValue)
+	{
+		shield += shieldValue;
+		updateShiled ();
+	}
+   public void AddEnergy(int newEnergyValue){
+		energy += newEnergyValue;
+		updateEnergy ();
+	}
+   public void AddLife(){
+		updateLife ();
+	}
+   public void AddScore(int newScoreValue){
 		score += newScoreValue;
 		updateScore ();
 	}

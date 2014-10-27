@@ -1,0 +1,8 @@
+- new in 1.3: you can scale the effects now.
+Copy the "particleWindow" scipt from the "DynamicElements_effects/scripts" folder into an "editor" folder. Just simply create one if you don't have one. See the attached screenshot (editorFolder.jpg), where it should go.
+
+Now a new "custom" toolbar should appear at the top in your unity. If it doesn't, then restart unity. There is now a "particle scale" option in your unity under "custom"; simply select an effect prefab in your project tab, click on this "particle scale", and set the scale to something different. BE CAREFUL, this simply overwrites the effect without question, so make a backup if you need the original effect too.
+
+There are still some issues with this method, as they do not scale the ellipsoid emitter's parameters; these simply cannot be accessed by scripts. However most of the effects would be okay. There are some effects (starfall, combo ones, etc) that create sub-effects, in cases like these just scale the referred effects.
+
+Note that this particle scaler script only works with "legacy" type particles, shuriken is not supported, as it is completely different.
