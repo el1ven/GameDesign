@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 	public GameObject CubeMonster;
 	public GameObject TriangleMonster;
 	public GameObject SphereMonster;
+	public GameObject firstBoss; 
+	public int firstBossScore;
 	public Vector3 spawnValues;
 
 	public int hazardCount;
@@ -76,7 +78,7 @@ public class GameController : MonoBehaviour {
 				Instantiate (CubeMonster, spawnPosition, spawnRotation);
 				yield return new WaitForSeconds (spawnWait);
 			}
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i <hazardCount; i++)
 			{   
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = new Quaternion(0,180,0,0);
@@ -88,7 +90,12 @@ public class GameController : MonoBehaviour {
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = new Quaternion(0,180,0,0);
 				Instantiate (TriangleMonster,spawnPosition,spawnRotation);
-				yield return new WaitForSeconds (spawnWait);
+			}
+			if( this.score >= firstBossScore)//如果分数够了出大boss干翻
+			{
+//				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+//				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
+				 //Instantiate(firstBoss,spawnPosition,spawnRotation);
 			}
 			yield return new WaitForSeconds (waveWait);
 		}

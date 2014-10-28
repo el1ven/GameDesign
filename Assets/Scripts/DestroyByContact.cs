@@ -5,7 +5,6 @@ public class DestroyByContact : MonoBehaviour
 {
 	public GameObject explosion;
 	public GameObject playerExplosion;
-	public GameObject splitCircle;
 	public GameObject SphereRemains;
 	//public int life;
 	public int fireStregth;
@@ -26,6 +25,7 @@ public class DestroyByContact : MonoBehaviour
 			gamePanel = gameControllerObject2.GetComponent <GameController>();
 		}
 	}
+
 	void OnTriggerEnter(Collider other) 
 	{
 		if (other.tag == "bullet") 
@@ -67,14 +67,12 @@ public class DestroyByContact : MonoBehaviour
 				  gamePanel.AddEnergy(1);
 				  Destroy(gameObject);
 			    }
-		       	   Destroy(other.gameObject);
+		       	  Destroy(other.gameObject);
 		  }
-		if (other.tag == "Player")
+		else if (other.tag == "Player")
 		{
-			if(this.name=="Sphere M(Clone)")
-				gameController.life-=1;
-			 else
-			   gameController.life -= 1;
+
+			gameController.life -= 1;
 			gamePanel.AddLife();
 			if(gameController.life <=0)//如果主角生命低下
 			{
@@ -85,15 +83,5 @@ public class DestroyByContact : MonoBehaviour
 			Destroy(gameObject);	
 			//gameController.GameOver ();
 	   }
-		if (other.tag == "SphereRemain(Clone)")
-		{
-			gameController.life-=1;
-			gamePanel.AddLife();
-			Instantiate(explosion, transform.position, transform.rotation);
-			if(gameController.life <=0)//如果主角生命低下
-			     Destroy(other.gameObject);
-			Destroy(gameObject);
-
-		}
 	  }
 }

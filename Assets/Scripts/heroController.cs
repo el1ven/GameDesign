@@ -21,6 +21,10 @@ public class heroController : MonoBehaviour {
 
 	public GameObject blackHole;
 	public GameObject shield;
+	public GameObject lightning;
+
+	public GameObject lightningEffect;
+	public GameObject shieldEffect;
 	public GameObject blackHoleEffect;
 	public GameObject trailEffect;
 	
@@ -100,8 +104,10 @@ public class heroController : MonoBehaviour {
 		//make the slip effect
 		this.rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, this.rigidbody.velocity.x * -tilt);//slip effect
 
-		Instantiate (trailEffect, trailSpawn.position, trailSpawn.rotation);
-
+		if (Input.GetAxis ("Horizontal")!=0.0f || Input.GetAxis("Vertical")!=0.0f) 
+		{
+			Instantiate (trailEffect, trailSpawn.position, trailSpawn.rotation);		
+		}
 		heroRotation();
        
 		if (Input.GetKeyDown("b") &&gameController.energy >= blackNum) 
@@ -118,11 +124,14 @@ public class heroController : MonoBehaviour {
 			GameObject.Find("shield").transform.parent = this.transform;
 			GameObject.Find("shield").transform.localScale = new Vector3(3.0f,3.0f,3.0f);
 			haveShiled = true;
+			Instantiate(shieldEffect,this.rigidbody.position,this.rigidbody.rotation);
 			gameController.AddShield(2);
 		}
 		if (Input.GetKeyDown ("c") && gameController.energy >= lightNum) 
 		{
 			gameController.AddEnergy(-lightNum);
+			Instantiate(lightning,this.rigidbody.position,this.rigidbody.rotation);
+			Instantiate(lightningEffect,this.rigidbody.position,this.rigidbody.rotation);
 		}
 	}
 	public void AddRate()

@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -49,6 +49,17 @@
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChanger.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChangerVertex.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\Set60Fps.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX2_AutoRotate.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_InspectorHelp.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
+     <Compile Include="Assets\LightningController.cs" />
      <Compile Include="Assets\Scripts\BlackHoleController.cs" />
      <Compile Include="Assets\Scripts\BlackHoleCoreController.cs" />
      <Compile Include="Assets\Scripts\CubeMonsterController.cs" />
@@ -61,6 +72,7 @@
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\RandomRotator.cs" />
      <Compile Include="Assets\Scripts\ShieldController.cs" />
+     <Compile Include="Assets\Scripts\SphereMonsterController.cs" />
      <Compile Include="Assets\Scripts\heroController.cs" />
      <Compile Include="Assets\selfrotate.cs" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-AlphaTest.shader" />
@@ -70,6 +82,7 @@
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-ParallaxSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseDetail.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Bumped.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Normal.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-VertexLit.shader" />
      <None Include="Assets\DynamicElements_Effects\ScaleParticles.txt" />
@@ -89,9 +102,11 @@
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Diffuse.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\BlurEffectConeTap.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMaxFallback.shader" />
      <None Include="Assets\Glow11\_internal\AdvancedBlur.cginc" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-VertexLit.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-ParallaxSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-BumpSpec.shader" />
@@ -101,12 +116,14 @@
      <None Include="Assets\DynamicElements_Effects\readme.txt" />
      <None Include="Assets\Glow11\_internal\Glow11GlowObjectsCG.cginc" />
      <None Include="Assets\Glow11\Shaders\Unity\AlphaTest-Bumped.shader" />
+     <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\Glow11\Shaders\Unlit-VertexColor.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-VertexLit.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11ComposeMax.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Particle VertexLit Blended.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-BumpVertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Diffuse.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Glossy.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Parallax.shader" />
      <None Include="Assets\Glow11\Shaders\Illumin-Diffuse-VertexIllumin.shader" />
@@ -118,6 +135,7 @@
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11AdvancedBlur.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Particle Alpha Blend.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Diffuse.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Lightmap-Unlit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-Particle-Alpha-VertexLit.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-BumpSpec.shader" />
@@ -125,6 +143,7 @@
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Parallax.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Alpha.shader" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Downsample.shader" />
+     <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Compose.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Diffuse.shader" />
