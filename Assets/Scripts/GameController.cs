@@ -27,6 +27,12 @@ public class GameController : MonoBehaviour {
 	public GUIText shieldText;
 	private int shield;
 
+
+	public GUIText gameOverText;
+	private bool gameOver;
+
+	public GUIText restartText;
+	private bool restart;
 	void Start ()
 	{
 		StartCoroutine (SpawnWaves ());
@@ -35,8 +41,34 @@ public class GameController : MonoBehaviour {
 		energy = 0;
 		updateEnergy ();
 		hero.life = 10;
+
+		gameOverText.text = "";
+		gameOver = false;
+	
+		restartText.text = "";
+		restart = false;
 		updateLife ();
 	}
+	void Update ()
+	{
+		if (hero.life <= 0) 
+		   {
+			   gameOver = true;
+			}
+		if (gameOver)
+		  {
+			 if (Input.GetKeyDown (KeyCode.R))
+			   {
+				 Application.LoadLevel (Application.loadedLevel);
+				}
+		  }
+	}
+	public void GameOver()
+	      {
+		      gameOver = true;
+		      gameOverText.text = "Game Over!";
+		      restartText.text ="Please Press 'R' to restart";
+		  }
     void updateShiled(){
 		shieldText.text = "Shield: " + shield;
 		}

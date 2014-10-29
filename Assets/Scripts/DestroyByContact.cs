@@ -33,7 +33,7 @@ public class DestroyByContact : MonoBehaviour
 			Instantiate(explosion, transform.position, transform.rotation);
 			if(this.name=="CubeMonster1(Clone)")
 			    {
-			        gameController.AddRate();
+			        //gameController.AddRate();
 					gamePanel.AddScore(100);
 					gamePanel.AddEnergy(1);
 					//gameController.life-=1;
@@ -76,8 +76,9 @@ public class DestroyByContact : MonoBehaviour
 			gamePanel.AddLife();
 			if(gameController.life <=0)//如果主角生命低下
 			{
-			 Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			 Destroy(other.gameObject);
+			    Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			    Destroy(other.gameObject);
+				gamePanel.GameOver();
 			}
 			Instantiate(explosion, transform.position, transform.rotation);
 			Destroy(gameObject);	
