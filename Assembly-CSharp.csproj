@@ -62,6 +62,11 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
      <Compile Include="Assets\LightningController.cs" />
+     <Compile Include="Assets\MusicController.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIFilledSprite.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIInputSaved.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UISlicedSprite.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -188,6 +193,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\OptionParameter.cs" />
      <Compile Include="Assets\Scripts\BlackHoleController.cs" />
      <Compile Include="Assets\Scripts\BlackHoleCoreController.cs" />
      <Compile Include="Assets\Scripts\CubeMonsterController.cs" />
@@ -202,6 +208,9 @@
      <Compile Include="Assets\Scripts\ShieldController.cs" />
      <Compile Include="Assets\Scripts\SphereMonsterController.cs" />
      <Compile Include="Assets\Scripts\heroController.cs" />
+     <Compile Include="Assets\SelectFireCube.cs" />
+     <Compile Include="Assets\SelectIceCube.cs" />
+     <Compile Include="Assets\VolumeController.cs" />
      <Compile Include="Assets\handController.cs" />
      <Compile Include="Assets\selfrotate.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />

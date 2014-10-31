@@ -49,6 +49,10 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Editor\CFX_InspectorHelpEditor.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Editor\CFX_SpawnSystemEditor.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Editor\UIFilledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Editor\UISlicedSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Editor\UITiledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI Upgrade Tools\Editor\UpgradeWidgets.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />

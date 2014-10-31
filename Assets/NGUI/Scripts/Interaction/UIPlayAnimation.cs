@@ -113,7 +113,6 @@ public class UIPlayAnimation : MonoBehaviour
 	void Start ()
 	{
 		mStarted = true;
-
 #if USE_MECANIM
 		// Automatically try to find the animator
 		if (target == null && animator == null)

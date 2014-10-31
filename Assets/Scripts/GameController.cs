@@ -126,7 +126,7 @@ public class GameController : MonoBehaviour {
 			if( this.score >= firstBossScore)//如果分数够了出大boss干翻
 			{
 				firstBossScore += 30000;
-				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), 0.8f, spawnValues.z);
 				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
 				 Instantiate(firstBoss,spawnPosition,spawnRotation);
 			}
