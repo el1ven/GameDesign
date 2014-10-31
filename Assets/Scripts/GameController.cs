@@ -27,6 +27,12 @@ public class GameController : MonoBehaviour {
 	public GUIText shieldText;
 	private int shield;
 
+	public GUIText gameOverText;
+	private bool gameOver;
+
+    public GUIText restartText;
+	private bool restart;
+
 	void Start ()
 	{
 		StartCoroutine (SpawnWaves ());
@@ -36,7 +42,32 @@ public class GameController : MonoBehaviour {
 		updateEnergy ();
 		hero.life = 10;
 		updateLife ();
+		gameOverText.text = "";
+		gameOver = false;
+		restartText.text = "";
+		restart = false;
 	}
+	void Update ()
+	{
+		if (hero.life <= 0) 
+	   {
+			gameOver = true;
+		}
+		if (gameOver)
+		 {
+			if (Input.GetKeyDown (KeyCode.R))
+			  {
+				Application.LoadLevel (Application.loadedLevel);
+			  }
+		 }
+	}
+	public void GameOver()
+   {
+		 gameOver = true;
+		 gameOverText.text = "Game Over!";
+		 restartText.text ="Please Press 'R' to restart";
+   }
+
     void updateShiled(){
 		shieldText.text = "Shield: " + shield;
 		}
@@ -71,6 +102,7 @@ public class GameController : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while (true)
 		{
+			hazardCount +=1;
 			for (int i = 0; i < hazardCount; i++)
 			{   
 				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
@@ -80,22 +112,23 @@ public class GameController : MonoBehaviour {
 			}
 			for (int i = 0; i <hazardCount; i++)
 			{   
-				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				Vector3 spawnPosition = new Vector3 (spawnValues.x,spawnValues.y, Random.Range(-spawnValues.z,spawnValues.z));
 				Quaternion spawnRotation = new Quaternion(0,180,0,0);
 				Instantiate (SphereMonster,spawnPosition,spawnRotation);
 				yield return new WaitForSeconds (spawnWait);
 			}
 			for (int i = 0; i < hazardCount; i++)
 			{   
-				Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x,spawnValues.x), spawnValues.y, -spawnValues.z);
 				Quaternion spawnRotation = new Quaternion(0,180,0,0);
 				Instantiate (TriangleMonster,spawnPosition,spawnRotation);
 			}
 			if( this.score >= firstBossScore)//如果分数够了出大boss干翻
 			{
-//				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-//				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
-				 //Instantiate(firstBoss,spawnPosition,spawnRotation);
+				firstBossScore += 30000;
+				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
+				 Instantiate(firstBoss,spawnPosition,spawnRotation);
 			}
 			yield return new WaitForSeconds (waveWait);
 		}
