@@ -33,8 +33,27 @@ public class GameController : MonoBehaviour {
     public GUIText restartText;
 	private bool restart;
 
+	private GameObject recordObject;
+	private OptionParameter recordController;
+
+	private bool pause = false;
+
 	void Start ()
 	{
+
+		recordObject = GameObject.FindGameObjectWithTag("recordObject");
+		recordController = recordObject.GetComponent<OptionParameter>();
+
+		if (recordController.mode == 0) 
+		{//简单模式
+			firstBossScore = 10000000;
+			this.audio.volume = recordController.musicVolume;
+		}
+		if (recordController.mode == 1) 
+		{//困难模式
+			firstBossScore = 10000;
+			this.audio.volume = recordController.musicVolume;
+		}
 		StartCoroutine (SpawnWaves ());
 		score = 0;
 		updateScore ();
@@ -60,6 +79,14 @@ public class GameController : MonoBehaviour {
 				Application.LoadLevel (Application.loadedLevel);
 			  }
 		 }
+		if (Input.GetKeyDown (KeyCode.Escape) && pause == false) {
+			            pause = true;
+						Time.timeScale = 0.0f;		
+				} 
+		else if (Input.GetKeyDown (KeyCode.Escape) && pause == true) {
+			            pause = false;
+			            Time.timeScale = 1.0f;
+				}
 	}
 	public void GameOver()
    {
@@ -67,8 +94,7 @@ public class GameController : MonoBehaviour {
 		 gameOverText.text = "Game Over!";
 		 restartText.text ="Please Press 'R' to restart";
    }
-
-    void updateShiled(){
+   void updateShiled(){
 		shieldText.text = "Shield: " + shield;
 		}
 	void updateEnergy(){

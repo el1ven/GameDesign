@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BossController.cs" />
+     <Compile Include="Assets\ClicKExit.cs" />
+     <Compile Include="Assets\ClickPlay.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChanger.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChangerVertex.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\Set60Fps.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
+     <Compile Include="Assets\LegDestroyController.cs" />
      <Compile Include="Assets\LightningController.cs" />
      <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIFilledSprite.cs" />

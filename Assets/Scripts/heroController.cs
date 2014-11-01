@@ -36,6 +36,10 @@ public class heroController : MonoBehaviour {
 
 	private float ScaleValue= (float)1.0;
 	private bool haveShiled = false;
+
+	private GameObject recordObject;
+	private OptionParameter recordController;
+
 	void Start()
 	{
 
@@ -44,6 +48,11 @@ public class heroController : MonoBehaviour {
 		this.transform.Rotate(new Vector3(0,1,0), 90.0f);
 
 		gameController = gameControllerObject.GetComponent <GameController>();
+
+		recordObject = GameObject.FindGameObjectWithTag("recordObject");
+		recordController = recordObject.GetComponent<OptionParameter>();
+
+		this.audio.volume = recordController.effectVolume;
 
 	}
 	
