@@ -220,6 +220,7 @@
      <Compile Include="Assets\SnakeController.cs" />
      <Compile Include="Assets\VolumeController.cs" />
      <Compile Include="Assets\handController.cs" />
+     <Compile Include="Assets\movie.cs" />
      <Compile Include="Assets\selfrotate.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-AlphaTest.shader" />
