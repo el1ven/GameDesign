@@ -10,6 +10,11 @@ public class GameController : MonoBehaviour {
 	public int firstBossScore;
 	public Vector3 spawnValues;
 
+	public GameObject firstSnake;
+	public GameObject secondSnake;
+	public GameObject thirdSnake;
+	public GameObject fourthSnake;
+
 	public Texture GUI_Heart;
 	public Texture GUI_Score;
 	public Texture GUI_HighScore;
@@ -171,6 +176,11 @@ public class GameController : MonoBehaviour {
 				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), 0.8f, spawnValues.z);
 				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
 				 Instantiate(firstBoss,spawnPosition,spawnRotation);
+
+				Instantiate (firstSnake,firstSnake.transform.position,firstSnake.transform.rotation);
+				Instantiate (secondSnake,secondSnake.transform.position,secondSnake.transform.rotation);
+				Instantiate (thirdSnake,thirdSnake.transform.position,thirdSnake.transform.rotation);
+				Instantiate (fourthSnake,fourthSnake.transform.position,fourthSnake.transform.rotation);
 			}
 			yield return new WaitForSeconds (waveWait);
 		}
@@ -178,7 +188,7 @@ public class GameController : MonoBehaviour {
 	void OnGUI()
 	{
 		//Vector3 WindowPos = //need to decide the position
-		print ("OnGUI called");
+		//print ("OnGUI called");
 		if(energy < hero.blackNum){
 			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128,128,128),GUI_Blackhole00);
 		}

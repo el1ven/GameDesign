@@ -52,6 +52,8 @@ public class heroController : MonoBehaviour {
 		recordObject = GameObject.FindGameObjectWithTag("recordObject");
 		recordController = recordObject.GetComponent<OptionParameter>();
 
+		//Debug.Log (this.renderer.material.mainTexture);
+		renderer.material.mainTextureScale = new Vector2(2.0f,2.0f);
 		this.audio.volume = recordController.effectVolume;
 
 	}
