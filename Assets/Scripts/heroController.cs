@@ -15,6 +15,8 @@ public class heroController : MonoBehaviour {
 	public int life;
 	public GameObject shot;
 	public Transform shotSpawn;
+	public Transform shotSpawn2;
+	public Transform shotSpawn3;
 	public Transform trailSpawn;
 	public float fireRate;
 	public float nextFire;
@@ -22,7 +24,9 @@ public class heroController : MonoBehaviour {
 	public GameObject blackHole;
 	public GameObject shield;
 	public GameObject lightning;
-
+    
+	public GameObject degradeEffect;
+	public GameObject evolutionEffect;
 	public GameObject lightningEffect;
 	public GameObject shieldEffect;
 	public GameObject blackHoleEffect;
@@ -36,6 +40,16 @@ public class heroController : MonoBehaviour {
 
 	private float ScaleValue= (float)1.0;
 	private bool haveShiled = false;
+
+	public Texture2D textureLevel1;
+	public Texture2D textureLevel2;
+	public Texture2D textureLevel3;
+	public Texture2D textureLevel4;
+
+	public int levelUpNum;
+	public int levelEnergy = 100;
+
+	public int curLevel = 1;
 
 	private GameObject recordObject;
 	private OptionParameter recordController;
@@ -53,7 +67,10 @@ public class heroController : MonoBehaviour {
 		recordController = recordObject.GetComponent<OptionParameter>();
 
 		//Debug.Log (this.renderer.material.mainTexture);
-		renderer.material.mainTextureScale = new Vector2(2.0f,2.0f);
+		//renderer.material.mainTextureScale = new Vector2(2.0f,2.0f);
+
+		//renderer.material.SetTexture("Element 1",textureLevel1);
+
 		this.audio.volume = recordController.effectVolume;
 
 	}
@@ -73,6 +90,8 @@ public class heroController : MonoBehaviour {
 		//我们忽略Y轴的向量，把2D向量应用在3D向量中。
 		Vector3 targetDirection = new Vector3(-normal.x,0.0f,-normal.z);
 		shotSpawn.forward = Vector3.Lerp(shotSpawn.forward, targetDirection, 0.5f);
+		shotSpawn2.forward = Vector3.Lerp(shotSpawn2.forward, targetDirection, 0.5f);
+		shotSpawn3.forward = Vector3.Lerp(shotSpawn3.forward, targetDirection, 0.5f);
 	}
 
 	void heroRotation(){
@@ -85,12 +104,27 @@ public class heroController : MonoBehaviour {
 
 	void Update()
 	{
+
 		if (Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
 			heroBulletRotation();
 			heroRotation();
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+			if(curLevel>=2)
+			{
+			Instantiate(shot, shotSpawn2.position, shotSpawn2.rotation);
+			fireRate =(float) 0.08;
+			}
+			if(curLevel>=3)
+			{
+				Instantiate(shot, shotSpawn3.position, shotSpawn3.rotation);
+				fireRate =(float) 0.06;
+			}
+			if(curLevel>=4)
+			{
+				fireStrength = 2;
+			}
 			shot.transform.localScale = new Vector3(ScaleValue,ScaleValue,ScaleValue);
 			audio.Play ();
 		}
@@ -119,15 +153,16 @@ public class heroController : MonoBehaviour {
 		{
 			Instantiate (trailEffect, trailSpawn.position, trailSpawn.rotation);		
 		}
+
 		heroRotation();
        
-		if (Input.GetKeyDown("b") &&gameController.energy >= blackNum) 
+		if (Input.GetKeyDown("2") &&gameController.energy >= blackNum) 
 		{
 			gameController.AddEnergy(-blackNum);
 			Instantiate(blackHole,this.rigidbody.position,this.rigidbody.rotation);
 			Instantiate(blackHoleEffect,this.rigidbody.position,this.rigidbody.rotation);
 		}
-		if(Input.GetKeyDown("v") && gameController.energy >= shiledNum && haveShiled == false)
+		if(Input.GetKeyDown("4") && gameController.energy >= shiledNum && haveShiled == false)
 		{
 			gameController.AddEnergy(-shiledNum);
 
@@ -138,12 +173,46 @@ public class heroController : MonoBehaviour {
 			Instantiate(shieldEffect,this.rigidbody.position,this.rigidbody.rotation);
 			gameController.AddShield(2);
 		}
-		if (Input.GetKeyDown ("c") && gameController.energy >= lightNum) 
+		if (Input.GetKeyDown ("3") && gameController.energy >= lightNum) 
 		{
 			gameController.AddEnergy(-lightNum);
 			Instantiate(lightning,this.rigidbody.position,this.rigidbody.rotation);
 			Instantiate(lightningEffect,this.rigidbody.position,this.rigidbody.rotation);
 		}
+		if (Input.GetKeyDown ("1") && gameController.energy >= levelUpNum) 
+		{
+			curLevel++;
+			gameController.energy -= levelUpNum;
+			switch(curLevel)
+			{
+			  case 1:
+				levelEnergy = 100;
+				Instantiate(evolutionEffect,this.rigidbody.position,this.rigidbody.rotation);
+				renderer.materials [1].mainTexture = textureLevel1;
+				break;
+			  case 2:
+				//renderer.material.SetTexture("Element 1",textureLevel1);
+				levelEnergy =200;
+				Instantiate(evolutionEffect,this.rigidbody.position,this.rigidbody.rotation);
+				 renderer.materials [1].mainTexture = textureLevel2;
+			     //renderer.material.mainTexture = textureLevel2;
+			     break;
+			 case 3:
+				levelEnergy = 300;
+				 Instantiate(evolutionEffect,this.rigidbody.position,this.rigidbody.rotation);
+				 renderer.materials [1].mainTexture = textureLevel3;
+				 //renderer.material.mainTexture =textureLevel3;
+			     break;
+			 case 4:
+				levelEnergy = 400;
+				Instantiate(evolutionEffect,this.rigidbody.position,this.rigidbody.rotation);
+				renderer.materials [1].mainTexture = textureLevel4;
+				break;
+			default:
+				break;
+			}
+		}
+
 	}
 	public void AddRate()
 	{
@@ -158,7 +227,38 @@ public class heroController : MonoBehaviour {
 		if(ScaleValue < (float)3.0)
 		ScaleValue += (float)0.1;*/
 	}
-
+	public void DeGrade()
+	{
+		curLevel--;
+		switch (curLevel) 
+		{
+		case 1:
+			levelEnergy = 100;
+			Instantiate(degradeEffect,this.rigidbody.position,this.rigidbody.rotation);
+			renderer.materials [1].mainTexture = textureLevel1;
+			break;
+		case 2:
+			levelEnergy = 200;
+			//renderer.material.SetTexture("Element 1",textureLevel1);
+			Instantiate(degradeEffect,this.rigidbody.position,this.rigidbody.rotation);
+			renderer.materials [1].mainTexture = textureLevel2;
+			//renderer.material.mainTexture = textureLevel2;
+			break;
+		case 3:
+			levelEnergy = 300;
+			Instantiate(degradeEffect,this.rigidbody.position,this.rigidbody.rotation);
+			renderer.materials [1].mainTexture = textureLevel3;
+			//renderer.material.mainTexture =textureLevel3;
+			break;
+		case 4:
+			levelEnergy = 400;
+			Instantiate(degradeEffect,this.rigidbody.position,this.rigidbody.rotation);
+			renderer.materials [1].mainTexture = textureLevel4;
+			break;
+		default:
+			break;	
+		}
+	}
 	public void SetShield()
 	{
 		haveShiled = false;

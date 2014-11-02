@@ -95,6 +95,7 @@
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Diffuse.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Unlit-Color.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Reflect-ParallaxSpec.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-ParallaxSpec.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Glossy.shader" />
@@ -132,9 +133,11 @@
      <None Include="Assets\Glow11\Shaders\Unity\Alpha-Diffuse.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-Glossy.shader" />
+     <None Include="Assets\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Parallax.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\Glow11\Shaders\Illumin-Diffuse-VertexIllumin.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Normal-DiffuseFast.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Glow11\Shaders\Mobile\Illumin-Spec-VertexIllumin.shader" />
@@ -157,7 +160,9 @@
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Glow11\_internal\Resources\PostShaders\Glow11Compose.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Glow11\Shaders\Unity\Mobile\Mobile-BumpSpec.shader" />
      <None Include="Assets\Glow11\Shaders\Unity\Illumin-Diffuse.shader" />
@@ -172,6 +177,10 @@
  <Reference Include="Glow11">
  <HintPath>C:/Users/yy/Desktop/Game Design/GameDesign/GameDesign/Assets/Glow11/_internal/Plugins/Glow11.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{CFF9FFC6-286A-72DE-80CD-2C66309F57AD}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

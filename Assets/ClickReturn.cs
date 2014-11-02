@@ -5,7 +5,7 @@ public class ClickReturn : MonoBehaviour {
 
 	void OnClick()
 	{
-		Application.LoadLevel (0);
+		Application.LoadLevel (1);
 			Time.timeScale = 1.0f;
 	}
 }

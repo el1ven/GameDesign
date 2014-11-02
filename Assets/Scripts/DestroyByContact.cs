@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DestroyByContact : MonoBehaviour 
@@ -73,6 +73,7 @@ public class DestroyByContact : MonoBehaviour
 		{
 
 			gameController.life -= 1;
+			gameController.DeGrade();
 			ScreenShakeController.isshakeCamera=true;
 			gamePanel.AddLife();
 			if(gameController.life <=0)//如果主角生命低下

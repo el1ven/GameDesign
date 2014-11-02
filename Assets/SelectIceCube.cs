@@ -14,6 +14,6 @@ public class SelectIceCube : MonoBehaviour {
 	{
 		recordController.mode = 1;
 		DontDestroyOnLoad (recordObject);
-		Application.LoadLevel (1);
+		Application.LoadLevel (2);
 	}
 }

@@ -13,6 +13,6 @@ void OnClick()
 	{
 		recordController.mode = 0;
 		DontDestroyOnLoad (recordObject);
-		Application.LoadLevel (1);
+		Application.LoadLevel (2);
 	}
 }

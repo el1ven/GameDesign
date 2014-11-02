@@ -13,7 +13,7 @@ public class SnakeBodyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		GameObject gameControllerObject2 = GameObject.FindWithTag("Snake");
+		GameObject gameControllerObject2 = GameObject.FindWithTag("Snake1");
 		snakeController = gameControllerObject2.GetComponent <SnakeController>();
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		gameController = gameControllerObject.GetComponent <GameController>();

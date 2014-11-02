@@ -15,6 +15,10 @@ public class movie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown (KeyCode.Escape))
+		{
+			Application.LoadLevel("Menu");
+		}
 		if(Time.time>51){
 			Application.LoadLevel("Menu");
 		}

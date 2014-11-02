@@ -26,11 +26,15 @@ public class GameController : MonoBehaviour {
 	public Texture GUI_Lightning01;
 	public Texture GUI_Shield00;
 	public Texture GUI_Shield01;
+	public Texture GUI_LevelUP00;
+	public Texture GUI_LevelUP01;
 
 	public int hazardCount;
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
+
+
 
 	public GUIText scoreText;
 	private int score;
@@ -52,6 +56,7 @@ public class GameController : MonoBehaviour {
 
 	private GameObject recordObject;
 	private OptionParameter recordController;
+	private Camera camera;
 
 	public bool pause = false;
 	
@@ -62,16 +67,18 @@ public class GameController : MonoBehaviour {
 		PausePanel.SetActive (false);
 		recordObject = GameObject.FindGameObjectWithTag("recordObject");
 		recordController = recordObject.GetComponent<OptionParameter>();
-
+		camera = Camera.main;
 		if (recordController.mode == 0) 
 		{//简单模式
 			firstBossScore = 10000000;
-			this.audio.volume = recordController.musicVolume;
+			camera.audio.volume = recordController.musicVolume;
+			//this.audio.volume = recordController.musicVolume;
 		}
 		if (recordController.mode == 1) 
 		{//困难模式
 			firstBossScore = 10000;
-			this.audio.volume = recordController.musicVolume;
+			camera.audio.volume = recordController.musicVolume;
+			//this.audio.volume = recordController.musicVolume;
 		}
 		StartCoroutine (SpawnWaves ());
 		score = 0;
@@ -134,6 +141,11 @@ public class GameController : MonoBehaviour {
 	}
    public void AddEnergy(int newEnergyValue){
 		energy += newEnergyValue;
+		if (energy >= hero.levelEnergy) 
+		{
+			energy = hero.levelEnergy;	
+		}
+		print (energy);
 		updateEnergy ();
 	}
    public void AddLife(){
@@ -172,15 +184,15 @@ public class GameController : MonoBehaviour {
 			}
 			if( this.score >= firstBossScore)//如果分数够了出大boss干翻
 			{
-				firstBossScore += 30000;
+				firstBossScore += 100000;
 				 Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), 0.8f, spawnValues.z);
 				 Quaternion spawnRotation = new Quaternion(0,180,0,0); 
 				 Instantiate(firstBoss,spawnPosition,spawnRotation);
 
 				Instantiate (firstSnake,firstSnake.transform.position,firstSnake.transform.rotation);
-				Instantiate (secondSnake,secondSnake.transform.position,secondSnake.transform.rotation);
-				Instantiate (thirdSnake,thirdSnake.transform.position,thirdSnake.transform.rotation);
-				Instantiate (fourthSnake,fourthSnake.transform.position,fourthSnake.transform.rotation);
+				//Instantiate (secondSnake,secondSnake.transform.position,secondSnake.transform.rotation);
+				//Instantiate (thirdSnake,thirdSnake.transform.position,thirdSnake.transform.rotation);
+				//Instantiate (fourthSnake,fourthSnake.transform.position,fourthSnake.transform.rotation);
 			}
 			yield return new WaitForSeconds (waveWait);
 		}
@@ -188,7 +200,13 @@ public class GameController : MonoBehaviour {
 	void OnGUI()
 	{
 		//Vector3 WindowPos = //need to decide the position
-		//print ("OnGUI called");
+		print ("OnGUI called");
+
+		if(energy < hero.levelUpNum || hero.curLevel > 4){
+			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128-128,128,128),GUI_LevelUP00);
+		}
+		else{GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128-128,128,128),GUI_LevelUP01);}
+
 		if(energy < hero.blackNum){
 			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128,128,128),GUI_Blackhole00);
 		}
@@ -201,8 +219,8 @@ public class GameController : MonoBehaviour {
 			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2+128,128,128),GUI_Shield00);
 		}
 		else{GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2+128,128,128),GUI_Shield01);}
-		
-		GUI.DrawTexture (new Rect(Screen.width-150-50,Screen.height/2-128+250,60,-256/100*energy),GUI_Energybar);
+		float temp = hero.levelEnergy;
+		GUI.DrawTexture (new Rect(Screen.width-150-50,Screen.height/2-128+250,60,-256/temp*energy),GUI_Energybar);
 		GUI.DrawTexture (new Rect(Screen.width-150-32,Screen.height/2-75,32,256),GUI_Energyframe);
 		
 		for(int i=0; i<hero.life; i++){
