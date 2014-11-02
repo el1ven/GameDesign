@@ -10,6 +10,18 @@ public class GameController : MonoBehaviour {
 	public int firstBossScore;
 	public Vector3 spawnValues;
 
+	public Texture GUI_Heart;
+	public Texture GUI_Score;
+	public Texture GUI_HighScore;
+	public Texture GUI_Energybar;
+	public Texture GUI_Energyframe;
+	public Texture GUI_Blackhole00;
+	public Texture GUI_Blackhole01;
+	public Texture GUI_Lightning00;
+	public Texture GUI_Lightning01;
+	public Texture GUI_Shield00;
+	public Texture GUI_Shield01;
+
 	public int hazardCount;
 	public float spawnWait;
 	public float startWait;
@@ -36,11 +48,13 @@ public class GameController : MonoBehaviour {
 	private GameObject recordObject;
 	private OptionParameter recordController;
 
-	private bool pause = false;
-
+	public bool pause = false;
+	
+	private GameObject PausePanel;
 	void Start ()
 	{
-
+		PausePanel = GameObject.FindGameObjectWithTag("PausePanel");
+		PausePanel.SetActive (false);
 		recordObject = GameObject.FindGameObjectWithTag("recordObject");
 		recordController = recordObject.GetComponent<OptionParameter>();
 
@@ -80,10 +94,12 @@ public class GameController : MonoBehaviour {
 			  }
 		 }
 		if (Input.GetKeyDown (KeyCode.Escape) && pause == false) {
+			PausePanel.SetActive(true);
 			            pause = true;
 						Time.timeScale = 0.0f;		
 				} 
 		else if (Input.GetKeyDown (KeyCode.Escape) && pause == true) {
+			            PausePanel.SetActive(false);
 			            pause = false;
 			            Time.timeScale = 1.0f;
 				}
@@ -158,6 +174,36 @@ public class GameController : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (waveWait);
 		}
+	}
+	void OnGUI()
+	{
+		//Vector3 WindowPos = //need to decide the position
+		print ("OnGUI called");
+		if(energy < hero.blackNum){
+			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128,128,128),GUI_Blackhole00);
+		}
+		else{GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2-128,128,128),GUI_Blackhole01);}
+		if(energy < hero.lightNum){
+			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2,128,128),GUI_Lightning00);
+		}
+		else{GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2,128,128),GUI_Lightning01);}
+		if(energy < hero.shiledNum){
+			GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2+128,128,128),GUI_Shield00);
+		}
+		else{GUI.DrawTexture(new Rect (Screen.width-150,Screen.height/2+128,128,128),GUI_Shield01);}
+		
+		GUI.DrawTexture (new Rect(Screen.width-150-50,Screen.height/2-128+250,60,-256/100*energy),GUI_Energybar);
+		GUI.DrawTexture (new Rect(Screen.width-150-32,Screen.height/2-75,32,256),GUI_Energyframe);
+		
+		for(int i=0; i<hero.life; i++){
+			GUI.DrawTexture (new Rect (Screen.width/2-125+25*i,50,25,25), GUI_Heart);
+		}
+		GUI.DrawTexture (new Rect (25,15,128,64), GUI_Score);
+		GUI.color = Color.yellow;
+		GUI.skin.label.fontSize = 30;
+		GUI.Label (new Rect (50, 50, 128, 64), ""+score);
+		GUI.DrawTexture (new Rect (Screen.width-200, 15, 128, 50), GUI_HighScore);
+		GUI.skin.label.fontSize = 30;
 	}
 
 }

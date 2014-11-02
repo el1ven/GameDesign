@@ -49,6 +49,8 @@
      <Compile Include="Assets\BossController.cs" />
      <Compile Include="Assets\ClicKExit.cs" />
      <Compile Include="Assets\ClickPlay.cs" />
+     <Compile Include="Assets\ClickResume.cs" />
+     <Compile Include="Assets\ClickReturn.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChanger.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\ColorChangerVertex.cs" />
      <Compile Include="Assets\Glow11\Glow11DemoScene\Scripts\Set60Fps.cs" />
