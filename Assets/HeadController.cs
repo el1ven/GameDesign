@@ -24,8 +24,8 @@ public class HeadController : MonoBehaviour {
 			Destroy(other.gameObject);
 			if(bossController.bossLife <=0)
 			{
-				gameController.AddEnergy(50);
-				gameController.AddScore(800);
+				gameController.AddEnergy(100);
+				gameController.AddScore(100000);
 			    Instantiate(bossController.bossBurnEffect,bossController.rigidbody.position,bossController.rigidbody.rotation);
 				Destroy (bossController.gameObject);
 			}

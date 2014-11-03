@@ -33,7 +33,7 @@ public class SnakeBodyController : MonoBehaviour {
 			if(snakeController.snakeLife <=0)
 			{
 				gameController.AddEnergy(20);
-				gameController.AddScore(400);
+				gameController.AddScore(2000);
 				Instantiate(snakeController.snakeBurnEffect,snakeController.rigidbody.position,snakeController.rigidbody.rotation);
 				Destroy (snakeController.gameObject);
 			}
@@ -45,6 +45,7 @@ public class SnakeBodyController : MonoBehaviour {
 			if(hero.life <= 0){
 				Instantiate(playerExplosion,other.rigidbody.position,other.rigidbody.rotation);
 				Destroy (other.gameObject);
+				gameController.GameOver();
 			}
 		}
 	}

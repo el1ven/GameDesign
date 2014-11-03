@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 
-
+	public int hightScore;
 
 	public GUIText scoreText;
 	private int score;
@@ -59,12 +59,20 @@ public class GameController : MonoBehaviour {
 	private Camera camera;
 
 	public bool pause = false;
-	
+
+	public GameObject endPanel; 
+	private int previousHighScore;
+
 	private GameObject PausePanel;
 	void Start ()
 	{
+		hightScore = PlayerPrefs.GetInt ("highScore");
+		previousHighScore = hightScore;
+
 		PausePanel = GameObject.FindGameObjectWithTag("PausePanel");
 		PausePanel.SetActive (false);
+		endPanel.SetActive (false);
+
 		recordObject = GameObject.FindGameObjectWithTag("recordObject");
 		recordController = recordObject.GetComponent<OptionParameter>();
 		camera = Camera.main;
@@ -105,22 +113,31 @@ public class GameController : MonoBehaviour {
 				Application.LoadLevel (Application.loadedLevel);
 			  }
 		 }
-		if (Input.GetKeyDown (KeyCode.Escape) && pause == false) {
-			PausePanel.SetActive(true);
+		if (Input.GetKeyDown (KeyCode.Escape) && pause == false)
+		       {
+			            PausePanel.SetActive(true);
 			            pause = true;
 						Time.timeScale = 0.0f;		
 				} 
-		else if (Input.GetKeyDown (KeyCode.Escape) && pause == true) {
+		else if (Input.GetKeyDown (KeyCode.Escape) && pause == true) 
+		        {
 			            PausePanel.SetActive(false);
 			            pause = false;
 			            Time.timeScale = 1.0f;
 				}
+		 if (this.score > previousHighScore) 
+		{
+		      hightScore = this.score;		
+		}
 	}
 	public void GameOver()
    {
 		 gameOver = true;
 		 gameOverText.text = "Game Over!";
-		 restartText.text ="Please Press 'R' to restart";
+		 Time.timeScale = 0.0f;
+		 PlayerPrefs.SetInt("highScore",this.score);
+		 endPanel.SetActive (true);
+		//restartText.text ="Please Press 'R' to restart";
    }
    void updateShiled(){
 		shieldText.text = "Shield: " + shield;
@@ -230,8 +247,9 @@ public class GameController : MonoBehaviour {
 		GUI.color = Color.yellow;
 		GUI.skin.label.fontSize = 30;
 		GUI.Label (new Rect (50, 50, 128, 64), ""+score);
-		GUI.DrawTexture (new Rect (Screen.width-200, 15, 128, 50), GUI_HighScore);
+		GUI.DrawTexture (new Rect (Screen.width-300, 15, 128, 50), GUI_HighScore);
 		GUI.skin.label.fontSize = 30;
+		GUI.Label (new Rect (Screen.width-150, 20, 128, 50), "" + hightScore);
 	}
 
 }

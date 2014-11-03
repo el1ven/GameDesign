@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ClickReturn : MonoBehaviour {
+public class ClickRestart : MonoBehaviour {
 
 	void OnClick()
 	{
 		Time.timeScale = 1.0f;
-		Application.LoadLevel (1);
+		Application.LoadLevel (2);
 	}
 }

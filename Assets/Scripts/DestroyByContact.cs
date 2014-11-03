@@ -64,6 +64,7 @@ public class DestroyByContact : MonoBehaviour
 			  if(this.name =="SphereRemain(Clone)")
 			    {
 				  gamePanel.AddLife();
+				  gamePanel.AddScore(100);
 				  gamePanel.AddEnergy(1);
 				  Destroy(gameObject);
 			    }

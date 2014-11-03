@@ -1,20 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BossMoveUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameController.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\mousePointController.cs" Line="1" Column="1" />
-      <File FileName="Assets\lineController1.cs" Line="1" Column="1" />
-      <File FileName="Assets\movie.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DestroyByContact.cs" Line="1" Column="1" />
-      <File FileName="Assets\head.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\heroController.cs" Line="168" Column="1" />
-      <File FileName="Assets\lineController2.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Examples\Scripts\Other\SpinWithMouse.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DestroyByContact.cs" Line="78" Column="45" />
+      <File FileName="Assets\BossController.cs" Line="1" Column="1" />
+      <File FileName="Assets\handController.cs" Line="1" Column="1" />
+      <File FileName="Assets\HeadController.cs" Line="1" Column="1" />
+      <File FileName="Assets\SnakeController.cs" Line="1" Column="1" />
       <File FileName="Assets\SnakeBodyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\lineController3.cs" Line="1" Column="1" />
-      <File FileName="Assets\lineController4.cs" Line="1" Column="1" />
-      <File FileName="Assets\BossMoveUp.cs" Line="13" Column="18" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="252" Column="44" />
+      <File FileName="Assets\ClickRestart.cs" Line="9" Column="27" />
+      <File FileName="Assets\ClickReturn.cs" Line="9" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
